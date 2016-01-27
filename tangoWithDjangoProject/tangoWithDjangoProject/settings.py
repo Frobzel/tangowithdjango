@@ -49,6 +49,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+
+TEMPLATE_DIRS = (
+    TEMPLATE_PATH,
+)
+
 ROOT_URLCONF = 'tangoWithDjangoProject.urls'
 
 WSGI_APPLICATION = 'tangoWithDjangoProject.wsgi.application'
