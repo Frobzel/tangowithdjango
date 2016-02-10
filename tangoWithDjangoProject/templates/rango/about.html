@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} <!-- New Line -->
+
+<html>
+	<head>
+		<title>About Rango</title>
+	</head>
+	
+	<body>
+		<h1>About Rango:</h1>
+		Rango is about practicing working with Django and uploading sweet sweet images <br />
+		<strong>{{ anothermessage }}</string><br />
+		<a href="/rango/">Home</a><br />
+		<img src="{% static "images/sweet.jpg" %}" alt="More Sweet AF Images Right Here" /> <!-- New line -->
+	</body>
+</html>
