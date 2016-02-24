@@ -1,5 +1,5 @@
 import os
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tangoWithDjangoProject.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tangoWithDjangoProject')
 
 import django
 django.setup()
@@ -56,8 +56,10 @@ def add_page(cat, title, url, views=0):
     p.save()
     return p
 
-def add_cat(name):
-    c = Category.objects.get_or_create(name=name)[0]
+def add_cat(name, views, likes):
+    c = Category.ovjects.get_or_create(name=name)[0]
+    c.views = views
+    c.likes = likes
     return c
 
 if __name__ == '__main__':
