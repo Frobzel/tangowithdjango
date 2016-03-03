@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 
-{% load staticfiles %} <!-- New Line -->
-
 <html>
 	<head>
 		<title>Rango</title>
 	</head>
 	
 	<body>
-		<h1>Rango says hai there!</h1>
+		<h2> Top Categories:</h2>
 		
 		{% if categories %}
 			<ul>
 				{% for category in categories %}
-				<li>{{ category.name }}</li>
+				<li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
 				{% endfor %}
 			</ul>
 		{% else %}
 			<strong>There are no categories present m8</strong>
 		{% endif %}
 		
+		<h2>Top Pages:</h2>
 		
+		{% if pages %}
+			<ul>
+				{% for page in pages %}
+				<li><a href="rango/page/{{ page.url}}">{{ page.title }}</a></li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<strong>There are no pages present, sorry about that.</strong>
+		{% endif %}
+		
+		<a href="/rango/add_category/">Add a new category</a><br />
 		<a href="/rango/about/">About</a><br />
 	</body>
 </html>
