@@ -96,7 +96,7 @@ def add_page(request, category_name_slug):
 
     return render(request, 'rango/add_page.html', context_dict)
 
-def register(request):    
+"""def register(request):    
     registered = False
 
     if request.method == 'POST':
@@ -127,8 +127,9 @@ def register(request):
     return render(request,
                   'rango/register.html',
                   {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
+"""                  
 
-def user_login(request):
+"""def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -145,12 +146,14 @@ def user_login(request):
             return HttpResponse("Invalid login details supplied!")
     else:
         return render(request, 'rango/login.html', {})
+"""
 
 @login_required
 def restricted(request):
     return HttpResponse("Since you're logged in, you can see this text")
-
+"""
 @login_required
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/rango/')
+"""
