@@ -1,0 +1,1 @@
+https://api.datamarket.azure.com/Bing/Search/v1/Web
